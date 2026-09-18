@@ -65,7 +65,7 @@ This extension relies directly on the official GitHub CLI tool. Before using it,
 
 ## 📄 License
 
-This project is licensed under the **[MIT License](LICENSE)**. It is completely free for everyone to use, modify, distribute, and implement in commercial workflows.
+This project is licensed under the **[MIT License](https://opensource.org/licenses/MIT)**. It is completely free for everyone to use, modify, distribute, and implement in commercial workflows.
 
 ---
 

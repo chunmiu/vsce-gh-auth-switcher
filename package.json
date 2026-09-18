@@ -7,16 +7,18 @@
     "vscode": "^1.138.0"
   },
   "publisher": "floatingcat",
-  "homepage": "https://github.com/chumniu/vsce-gh-auth-switcher",
+  "homepage": "https://github.com/chunmiu/vsce-gh-auth-switcher",
   "categories": [
     "Other"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/chumniu/vsce-gh-auth-switcher.git"
+    "url": "https://github.com/chunmiu/vsce-gh-auth-switcher.git"
   },
   "license": "MIT",
-  "activationEvents": [],
+  "activationEvents": [
+    "onView:ghUserTreeView"
+  ],
   "main": "./dist/extension.js",
   "contributes": {
     "viewsContainers": {
@@ -29,7 +31,7 @@
       ]
     },
     "views": {
-      "github-user-switcher": [
+      "gh-auth-switcher": [
         {
           "id": "ghUserTreeView",
           "name": "Accounts",
