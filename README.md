@@ -23,19 +23,27 @@ This extension relies directly on the official GitHub CLI tool. Before using it,
    * Make sure the `gh` command is accessible from your system environment path.
 
 2. **Sync Git Config to Automatically Follow `gh`** (Highly Recommended):
-   To prevent your hardcoded global Git username from conflicting with the active profile switched by this extension, you can strip static user settings and configure Git to automatically read identity data straight from your active `gh` account session:
+   To prevent your hardcoded global Git username from conflicting with the active profile switched by this extension, you can strip static global user settings and bind them safely to your individual local repositories instead:
    
-   Run the following commands in your native terminal:
+   Run the following commands in your terminal:
    ```bash
    # Remove hardcoded static global identities
    git config --global --unset user.name
    git config --global --unset user.email
    
-   # Tell Git to seamlessly look up auth tokens and profiles directly via GitHub CLI
+   # Tell Git to seamlessly look up auth tokens and sessions directly via GitHub CLI
    gh auth setup-git
    ```
 
-3. **Initial Login**:
+3. **Initialize Your Local Repository Identity**:
+   Because Git requires a baseline author identity to compile commits locally, you must specify local repository tags (this isolates your account from global overrides):
+   ```bash
+   # Configure identity exclusively for your active project directory
+   git config --local user.name "your-github-username"
+   git config --local user.email "your-github-email@example.com"
+   ```
+
+4. **Initial Login**:
    * Ensure you have at least one account logged in (you can achieve this using the extension's `+` button or by running `gh auth login` in your native terminal).
 
 ---
